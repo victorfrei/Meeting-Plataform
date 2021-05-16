@@ -6,7 +6,6 @@ import Image from 'next/image'
 import { useEffect } from 'react'
 import { Card } from '../components/Card'
 import { TopNav } from '../components/TopNav'
-import styles from '../styles/Home.module.css'
 
 
 

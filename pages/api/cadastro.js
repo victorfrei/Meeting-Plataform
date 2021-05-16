@@ -1,19 +1,15 @@
 
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
-const Cat = mongoose.model('Cat', { name: String });
+// const Cat = mongoose.model('Cat', { name: String });
 
 
 
 
 export default (req,resp)=>{
-    mongoose.connect('mongodb+srv://atividade:SAxfmiFG2JekTDbA@skap.fpqyg.mongodb.net/Skap?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true});
-
     
-
-    const kitty = new Cat({ name: 'Zildjian' });
-    kitty.save().then(() => console.log('meow'))
-    .catch((err)=>console.log(err))
+    mongoose.connect('mongodb://atividade:HretPecMszT0ZpPc@skap-shard-00-00.fpqyg.mongodb.net:27017,skap-shard-00-01.fpqyg.mongodb.net:27017,skap-shard-00-02.fpqyg.mongodb.net:27017/admins?replicaSet=atlas-q8kj7n-shard-0&ssl=true&authSource=admin', {useNewUrlParser: true, useUnifiedTopology: true});
+    
 
    resp.json({msg: "Hello World!!"});
 }

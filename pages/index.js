@@ -71,7 +71,7 @@ export default function Home() {
     templateColumns={["repeat(1, 1fr)","repeat(1, 1fr)","repeat(1, 1fr)","repeat(2, 1fr)"]}
     >
 
-    <GridItem padding={['0','0','0','120px 20px']} maxW='80%' display='flex' justifyContent='center' alignItems='center'>
+    <GridItem padding={['0','0','0','120px 20px']} maxW='90%' display='flex' justifyContent='center' alignItems='center'>
       <Card bg="transparent" shadow="none" padding={['20px','0']}>
       <Heading margin='10px'>As Conversas Online Não Serão Mais As Mesmas</Heading>
       <Text margin='10px'>Tenha ótimas reuniões através de nossa plataforma, uma plataforma nova e que foca na sua experiência como usuário.</Text>      
@@ -80,7 +80,7 @@ export default function Home() {
       </Card>
     </GridItem>
 
-    <GridItem display='flex' flexDir='row' justifyContent='center' alignItems='center' alignContent='center' margin='80px 0'  display={['none','none','none','flex']}>
+    <GridItem display='flex' flexDir='row' justifyContent='center' alignItems='center' alignContent='center' marginRight='140px'  display={['none','none','none','flex']}>
     <Box className="home-page-effects" bg="red.300" px='30.5'></Box>
     <Box className="home-page-effects-2" bg="green.300"></Box>
     <Box className="home-page-effects-3" bg="gray.300"></Box>

@@ -12,8 +12,6 @@ import { TopNav } from '../components/TopNav'
 
 
 
-
-
 export default function Home() {
 
   useEffect(()=>{
@@ -24,13 +22,18 @@ export default function Home() {
     time2 = Math.random() * controle+2;
     time3 = Math.random() * controle+3;
     time4 = Math.random() * controle+4;
+
+     
+
+
+
     }
     
     calctime();
     while(time < 10 || time2 < 10 ||time3 < 10 ||time4<10){
       calctime();
     }
-    console.log(time+"a"+time2+"a"+time3+"a"+time4)
+
     var effe = document.querySelector('.home-page-effects');
     var effe2 = document.querySelector('.home-page-effects-2');
     var effe3 = document.querySelector('.home-page-effects-3');
@@ -53,8 +56,8 @@ export default function Home() {
       <Box margin="0 40px" flex='2' display={['none','flex']}>
         <List display='flex' flexDir='row' >
           <ListItem margin='10px'>Sobre Nós</ListItem>
-          <ListItem margin='10px'>Amigos</ListItem>
           <ListItem margin='10px'>Novidades</ListItem>
+          <ListItem margin='10px'>Preço</ListItem>
         </List>
       </Box>
       <Link href="/login"><Button roundedTop='full' roundedBottomLeft='full' bg="#E69A3E" _hover={{bg:'#E67A0E'}}>Sign In</Button></Link>
@@ -68,7 +71,7 @@ export default function Home() {
     templateColumns={["repeat(1, 1fr)","repeat(1, 1fr)","repeat(1, 1fr)","repeat(2, 1fr)"]}
     >
 
-    <GridItem padding={['0','0','0','120px 20px']}>
+    <GridItem padding={['0','0','0','120px 20px']} maxW='80%' display='flex' justifyContent='center' alignItems='center'>
       <Card bg="transparent" shadow="none" padding={['20px','0']}>
       <Heading margin='10px'>As Conversas Online Não Serão Mais As Mesmas</Heading>
       <Text margin='10px'>Tenha ótimas reuniões através de nossa plataforma, uma plataforma nova e que foca na sua experiência como usuário.</Text>      
@@ -77,7 +80,7 @@ export default function Home() {
       </Card>
     </GridItem>
 
-    <GridItem display='flex' flexDir='row' margin='80px 0'  display={['none','none','none','flex']}>
+    <GridItem display='flex' flexDir='row' justifyContent='center' alignItems='center' alignContent='center' margin='80px 0'  display={['none','none','none','flex']}>
     <Box className="home-page-effects" bg="red.300" px='30.5'></Box>
     <Box className="home-page-effects-2" bg="green.300"></Box>
     <Box className="home-page-effects-3" bg="gray.300"></Box>

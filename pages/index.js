@@ -60,7 +60,7 @@ export default function Home() {
           <ListItem margin='10px'>Preço</ListItem>
         </List>
       </Box>
-      <Link href="/login"><Button roundedTop='full' roundedBottomLeft='full' bg="#E69A3E" _hover={{bg:'#E67A0E'}}>Sign In</Button></Link>
+      <Link href="/login" _hover={{textDecor:"none"}}><Button roundedTop='full' roundedBottomLeft='full' bg="#E69A3E" _hover={{bg:'#E67A0E'}}>Sign In</Button></Link>
       
     </TopNav>
 
@@ -83,7 +83,7 @@ export default function Home() {
     <GridItem display='flex' flexDir='row' justifyContent='center' alignItems='center' alignContent='center' marginRight='140px'  display={['none','none','none','flex']}>
     <Box className="home-page-effects" bg="red.300" px='30.5'></Box>
     <Box className="home-page-effects-2" bg="green.300"></Box>
-    <Box className="home-page-effects-3" bg="gray.300"></Box>
+    <Box className="home-page-effects-3" bg="gray.500"></Box>
     <Box className="home-page-effects-4" bg="blue.300"></Box>
     </GridItem>
     </Grid>

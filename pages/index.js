@@ -68,7 +68,7 @@ export default function Home() {
     width='100%'
     height='100%'
     templateRows="repeat(1, 1fr)"
-    templateColumns={["repeat(1, 1fr)","repeat(1, 1fr)","repeat(1, 1fr)","repeat(2, 1fr)"]}
+    templateColumns={["repeat(1, 1fr)","repeat(1, 1fr)","repeat(1, 1fr)","1fr 60%"]}
     >
 
     <GridItem padding={['0','0','0','120px 20px']} maxW='90%' display='flex' justifyContent='center' alignItems='center'>
@@ -76,7 +76,7 @@ export default function Home() {
       <Heading margin='10px'>As Conversas Online Não Serão Mais As Mesmas</Heading>
       <Text margin='10px'>Tenha ótimas reuniões através de nossa plataforma, uma plataforma nova e que foca na sua experiência como usuário.</Text>      
       <Button margin='10px' size='lg' bg="#23A4B2" roundedTop='full' roundedBottomRight='full'>Comece Agora</Button>
-      <Button margin='10px' size='lg' roundedTop='full' roundedBottomLeft='full'>Cadastrar</Button>  
+      
       </Card>
     </GridItem>
 

@@ -34,34 +34,43 @@ body {
 }
 
 .home-page-effects{
-  width: 120px;
-  height: 400px;
-  border-radius: 80px;
-  margin: 10px;
+  width: 200px;
+  height: 130px;
+  border-top-left-radius: 80px;
+  border-top-right-radius: 80px; 
+  border-bottom-left-radius: 80px; 
+  /* border-radius: 80px; */
+  margin: 5px;
   animation: loading var(--animation-time) linear infinite;
 }
 
 .home-page-effects-2{
-  width: 120px;
-  height: 400px;
-  border-radius: 80px;
-  margin: 10px;
+  width: 200px;
+  height: 130px;
+  border-top-left-radius: 80px;
+  border-top-right-radius: 80px; 
+  border-bottom-right-radius: 80px; 
+  margin: 5px;
   animation: loading var(--animation-time-2) linear infinite;
 }
 
 .home-page-effects-3{
-  width: 120px;
-  height: 400px;
-  border-radius: 80px;
-  margin: 10px;
+  width: 200px;
+  height: 130px;
+  border-top-left-radius: 80px;
+  border-top-right-radius: 80px; 
+  border-bottom-left-radius: 80px; 
+  margin: 5px;
   animation: loading var(--animation-time-3) linear infinite;
 }
 
 .home-page-effects-4{
-  width: 120px;
-  height: 400px;
-  border-radius: 80px;
-  margin: 10px;
+  width: 200px;
+  height: 130px;
+  border-top-left-radius: 80px;
+  border-top-right-radius: 80px; 
+  border-bottom-right-radius: 80px; 
+  margin: 5px;
   animation: loading var(--animation-time-4) linear infinite;
 }
 

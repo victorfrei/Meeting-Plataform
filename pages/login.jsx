@@ -40,7 +40,7 @@ const login = () => (
         <Text as="span">Don&apos;t have an account?</Text>
         <Link href="#">Start free trial</Link>
       </Text>
-      <Card>
+      <Card borderRadius="10px">
         <LoginForm />
         <DividerWithText mt="6">or continue with</DividerWithText>
         <SimpleGrid mt="6" columns={3} spacing="3">

@@ -60,7 +60,7 @@ export default function Home() {
           <ListItem margin='10px'>Preço</ListItem>
         </List>
       </Box>
-      <Link href="/login" _hover={{textDecor:"none"}}><Button roundedTop='full' roundedBottomLeft='full' bg="#E69A3E" _hover={{bg:'#E67A0E'}}>Sign In</Button></Link>
+      <Link href="/login" _hover={{textDecor:"none"}}><Button roundedTop='full' roundedBottomLeft='full' bg="#E69A3E" _hover={{bg:'#E67A0E'}}>Login</Button></Link>
       
     </TopNav>
 
@@ -75,7 +75,7 @@ export default function Home() {
       <Card bg="transparent" shadow="none" padding={['20px','0']}>
       <Heading margin='10px'>As Conversas Online Não Serão Mais As Mesmas</Heading>
       <Text margin='10px'>Tenha ótimas reuniões através de nossa plataforma, uma plataforma nova e que foca na sua experiência como usuário.</Text>      
-      <Button margin='10px' size='lg' bg="#23A4B2" roundedTop='full' roundedBottomRight='full'>Comece Agora</Button>
+      <Link href="/signup" _hover={{textDecor:'none'}}><Button margin='10px' size='lg' bg="#23A4B2" roundedTop='full' roundedBottomRight='full'>Comece Agora</Button></Link>
       
       </Card>
     </GridItem>

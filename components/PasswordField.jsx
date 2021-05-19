@@ -37,9 +37,9 @@ export const PasswordField = React.forwardRef((props, ref) => {
   return (
     <FormControl id="password">
       <Flex justify="space-between">
-        <FormLabel>Password</FormLabel>
+        <FormLabel>Senha</FormLabel>
         <Box as="a" color={mode('blue.600', 'blue.200')} fontWeight="semibold" fontSize="sm">
-          Forgot Password?
+          Esqueceu a senha?
         </Box>
       </Flex>
       <InputGroup>

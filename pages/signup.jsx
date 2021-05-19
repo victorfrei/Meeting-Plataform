@@ -12,9 +12,9 @@ import { FaFacebook, FaGithub, FaGoogle } from 'react-icons/fa'
 import { Card } from '../components/Card'
 import { DividerWithText } from '../components/DividerWithText'
 import { Link } from '../components/Link'
-import { LoginForm } from '../components/LoginForm'
+import { SignupForm } from '../components/SignupForm'
 
-const login = () => (
+const signup = () => (
   <Box
     minH="100vh"
     py="12"
@@ -26,26 +26,26 @@ const login = () => (
     <Box maxW="md" mx="auto">
       
       <Heading textAlign="center" size="xl" fontWeight="extrabold">
-        Entrar na Conta
+        Cadastra-se
       </Heading>
       <Text mt="4" mb="8" align="center" maxW="md" fontWeight="medium">
-        <Text as="span">Não tem conta?</Text>
-        <Link href="/signup">Cadastre-se</Link>
+        <Text as="span">Já tem conta?</Text>
+        <Link href="/login">Fazer Login</Link>
       </Text>
       <Card borderRadius="10px">
-        <LoginForm />
-        <DividerWithText mt="6">ou continue com</DividerWithText>
+        <SignupForm />
+        <DividerWithText mt="6">ou cadastra-se com</DividerWithText>
         <SimpleGrid mt="6" columns={3} spacing="3">
           <Button color="currentColor" colorScheme='teal'>
-            <VisuallyHidden>Login with Facebook</VisuallyHidden>
+            <VisuallyHidden>Cadastrar com Facebook</VisuallyHidden>
             <FaFacebook />
           </Button>
           <Button color="currentColor" colorScheme='teal' >
-            <VisuallyHidden>Login with Google</VisuallyHidden>
+            <VisuallyHidden>Cadastrar com Google</VisuallyHidden>
             <FaGoogle />
           </Button>
           <Button color="currentColor" colorScheme='teal' >
-            <VisuallyHidden>Login with Github</VisuallyHidden>
+            <VisuallyHidden>Cadastrar com Github</VisuallyHidden>
             <FaGithub />
           </Button>
         </SimpleGrid>
@@ -55,4 +55,4 @@ const login = () => (
 )
 
 
-module.exports = login
+module.exports = signup

@@ -2,21 +2,25 @@ import { Button, chakra, FormControl, FormLabel, Input, Stack } from '@chakra-ui
 import * as React from 'react'
 import { PasswordField } from './PasswordField'
 
-export const LoginForm = (props) => (
+export const SignupForm = (props) => (
   <chakra.form
     onSubmit={(e) => {
-      e.preventDefault() // your login logic here
+      e.preventDefault()
     }}
     {...props}
   >
     <Stack spacing="6">
+      <FormControl id="nome">
+        <FormLabel>Nome</FormLabel>
+        <Input name="nome" type="text" autoComplete="name" required />
+      </FormControl>
       <FormControl id="email">
         <FormLabel>Email</FormLabel>
         <Input name="email" type="email" autoComplete="email" required />
       </FormControl>
       <PasswordField />
       <Button type="submit" bg='#E69A3E' _hover={{bg:"#E65A2E"}} size="lg" fontSize="md">
-        Login
+        Cadastrar
       </Button>
     </Stack>
   </chakra.form>

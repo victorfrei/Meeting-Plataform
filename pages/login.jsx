@@ -38,15 +38,15 @@ const login = () => (
         <LoginForm />
         <DividerWithText mt="6">ou continue com</DividerWithText>
         <SimpleGrid mt="6" columns={3} spacing="3">
-          <Button onClick={()=>{signIn('Facebook')}} color="currentColor" colorScheme='teal'>
+          <Button onClick={()=>{signIn('facebook')}} color="currentColor" colorScheme='teal'>
             <VisuallyHidden>Login with Facebook</VisuallyHidden>
             <FaFacebook />
           </Button>
-          <Button onClick={()=>{signIn('Google')}} color="currentColor" colorScheme='teal' >
+          <Button onClick={()=>{signIn('google')}} color="currentColor" colorScheme='teal' >
             <VisuallyHidden>Login with Google</VisuallyHidden>
             <FaGoogle />
           </Button>
-          <Button onClick={()=>{signIn('Github')}} color="currentColor" colorScheme='teal' >
+          <Button onClick={()=>{signIn('github')}} color="currentColor" colorScheme='teal' >
             <VisuallyHidden>Login with Github</VisuallyHidden>
             <FaGithub />
           </Button>

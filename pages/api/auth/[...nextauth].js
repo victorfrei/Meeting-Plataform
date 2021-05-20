@@ -21,10 +21,6 @@ export default NextAuth({
     Providers.Facebook({
         clientId: process.env.FACEBOOK_ID,
         clientSecret: process.env.FACEBOOK_SECRET,
-    }),
-    Providers.Instagram({
-        clientId: process.env.INSTAGRAM_ID,
-        clientSecret: process.env.INSTAGRAM_SECRET
     })
     // ...add more providers here
   ],

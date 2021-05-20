@@ -1,17 +1,19 @@
 
 import { Avatar } from "@chakra-ui/avatar";
 import { Box, Flex, Grid, GridItem, Heading, Text } from "@chakra-ui/layout";
+import { useSession } from "next-auth/client";
 import { formatWithValidation } from "next/dist/next-server/lib/utils";
 import Head from "next/head";
 import { useState } from "react";
 import {FiHome,FiPlusSquare, FiVideo} from "react-icons/fi";
 import { Card } from "../components/Card";
 import { NavBar } from "../components/NavBar";
-
-
+import {useRouter} from 'next/router';
 
 export default function dashboard(){
 
+    const [session,loading] = useSession();
+    const router = useRouter();
     const [hour,sethour] = useState("00");
     const [minutes,setminutes] = useState("00");
 
@@ -20,10 +22,12 @@ export default function dashboard(){
         setminutes(new Date().getMinutes());
     }, 100);
 
+    return (<>
+        {session && <>
 
-    return (
     
-    
+       
+   
     <Grid
     height='100vh'
     templateColumns='80px repeat(2,1fr)'
@@ -94,7 +98,16 @@ export default function dashboard(){
     </GridItem>
 
     </Grid>
+    
+    </>}
 
-    )
+    {!session && <>
+    
+    </>}
+
+       </>)
+
+    
+      
 }
 

@@ -7,6 +7,8 @@ import {
   useColorModeValue,
   VisuallyHidden,
 } from '@chakra-ui/react'
+import { signIn } from 'next-auth/client'
+import Head from 'next/head'
 import * as React from 'react'
 import { FaFacebook, FaGithub, FaGoogle } from 'react-icons/fa'
 import { Card } from '../components/Card'
@@ -24,7 +26,7 @@ const login = () => (
     }}
   >
     <Box maxW="md" mx="auto">
-      
+    <Head><title>Login</title></Head>
       <Heading textAlign="center" size="xl" fontWeight="extrabold">
         Entrar na Conta
       </Heading>
@@ -36,15 +38,15 @@ const login = () => (
         <LoginForm />
         <DividerWithText mt="6">ou continue com</DividerWithText>
         <SimpleGrid mt="6" columns={3} spacing="3">
-          <Button color="currentColor" colorScheme='teal'>
+          <Button onClick={()=>{signIn('Facebook')}} color="currentColor" colorScheme='teal'>
             <VisuallyHidden>Login with Facebook</VisuallyHidden>
             <FaFacebook />
           </Button>
-          <Button color="currentColor" colorScheme='teal' >
+          <Button onClick={()=>{signIn('Google')}} color="currentColor" colorScheme='teal' >
             <VisuallyHidden>Login with Google</VisuallyHidden>
             <FaGoogle />
           </Button>
-          <Button color="currentColor" colorScheme='teal' >
+          <Button onClick={()=>{signIn('Github')}} color="currentColor" colorScheme='teal' >
             <VisuallyHidden>Login with Github</VisuallyHidden>
             <FaGithub />
           </Button>

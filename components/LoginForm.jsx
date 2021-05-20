@@ -1,11 +1,16 @@
 import { Button, chakra, FormControl, FormLabel, Input, Stack } from '@chakra-ui/react'
 import * as React from 'react'
 import { PasswordField } from './PasswordField'
+import {signIn} from 'next-auth/client';
+
 
 export const LoginForm = (props) => (
+  
+
   <chakra.form
     onSubmit={(e) => {
-      e.preventDefault() // your login logic here
+      e.preventDefault();
+      signIn();
     }}
     {...props}
   >

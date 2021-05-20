@@ -50,7 +50,10 @@ export default function Home() {
 
 
   return (
+    
+
     <Box overflow='hidden' width="100%" height="100vh">
+    <Head><title>Skap Meetings</title></Head>
     <TopNav bg="transparent" shadow='none'>
       <img src="/logo.png" min-width='50px' min-height='50px' width="50px" height="50px"></img>
       <Box margin="0 40px" flex='2' display={['none','flex']}>

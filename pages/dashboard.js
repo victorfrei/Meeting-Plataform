@@ -2,6 +2,7 @@
 import { Avatar } from "@chakra-ui/avatar";
 import { Box, Flex, Grid, GridItem, Heading, Text } from "@chakra-ui/layout";
 import { formatWithValidation } from "next/dist/next-server/lib/utils";
+import Head from "next/head";
 import { useState } from "react";
 import {FiHome,FiPlusSquare, FiVideo} from "react-icons/fi";
 import { Card } from "../components/Card";
@@ -28,7 +29,7 @@ export default function dashboard(){
     templateColumns='80px repeat(2,1fr)'
     templateRows='80px 1fr'
     >
-
+    <Head><title>Dashboard</title></Head>
     <GridItem display='flex' margin='20px 0' flexDir='column' justifyContent='space-between' alignContent='center' rowSpan={2} colSpan={1}>
     
         <Flex justifyContent='center' >

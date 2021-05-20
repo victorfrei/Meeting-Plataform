@@ -1,4 +1,5 @@
 import NextAuth from 'next-auth'
+import { signOut } from 'next-auth/client'
 import Providers from 'next-auth/providers'
 
 export default NextAuth({
@@ -6,7 +7,7 @@ export default NextAuth({
   providers: [
     Providers.GitHub({
       clientId: process.env.GITHUB_ID,
-      clientSecret: process.env.GITHUB_SECRET
+      clientSecret: process.env.GITHUB_SECRET,
     }),
     Providers.Discord({
         clientId: process.env.DISCORD_ID,
@@ -27,6 +28,13 @@ export default NextAuth({
     })
     // ...add more providers here
   ],
+  pages:{
+    signIn:'/login',
+    signOut:'/logout',
+    newUser:'/dashboard',
+    
+  },
+ 
 
 debug: true,
   // A database is optional, but required to persist accounts in a database

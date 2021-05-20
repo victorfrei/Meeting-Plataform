@@ -7,6 +7,7 @@ import {
   useColorModeValue,
   VisuallyHidden,
 } from '@chakra-ui/react'
+import Head from 'next/head'
 import * as React from 'react'
 import { FaFacebook, FaGithub, FaGoogle } from 'react-icons/fa'
 import { Card } from '../components/Card'
@@ -24,7 +25,7 @@ const signup = () => (
     }}
   >
     <Box maxW="md" mx="auto">
-      
+    <Head><title>Cadastro</title></Head>
       <Heading textAlign="center" size="xl" fontWeight="extrabold">
         Cadastra-se
       </Heading>

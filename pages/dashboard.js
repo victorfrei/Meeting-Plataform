@@ -102,10 +102,11 @@ export default function dashboard(){
 
     }else{
       
-    useEffect(()=>{
-        router.replace("/login");
-    })   
-     
+        console.log(session)
+    // useEffect(()=>{
+    //     router.replace("/login");
+    // })   
+
     return <div></div> 
       
     }

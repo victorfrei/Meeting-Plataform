@@ -103,7 +103,7 @@ export default function dashboard(){
 
     {!session && 
     useEffect(()=>{
-        router.replace("/");
+        router.replace("/login");
     })
     }
 

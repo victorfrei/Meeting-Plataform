@@ -22,6 +22,15 @@ export default function dashboard(){
         setminutes(new Date().getMinutes());
     }, 100);
 
+
+    {!session && 
+        useEffect(()=>{
+            router.replace("/login");
+        })
+    }
+
+
+
     return (<>
         {session && <>
 
@@ -101,11 +110,7 @@ export default function dashboard(){
     
     </>}
 
-    {!session && 
-    useEffect(()=>{
-        router.replace("/login");
-    })
-    }
+    
 
        </>)
 

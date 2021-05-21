@@ -17,7 +17,6 @@ export default function dashboard({props}){
     const router = useRouter();
     const [hour,sethour] = useState("00");
     const [minutes,setminutes] = useState("00");
-    console.log("out"+session);
     setInterval(() => {
         sethour(new Date().getHours());
         setminutes(new Date().getMinutes());
@@ -102,12 +101,7 @@ export default function dashboard({props}){
     )
 
     }else{
-      
-        console.log("in"+session)
-    // useEffect(()=>{
-    //     router.replace("/login");
-    // })   
-
+     
     return <div></div> 
       
     }

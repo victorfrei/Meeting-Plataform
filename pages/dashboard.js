@@ -4,7 +4,7 @@ import { Box, Flex, Grid, GridItem, Heading, Text } from "@chakra-ui/layout";
 import { useSession } from "next-auth/client";
 import { formatWithValidation } from "next/dist/next-server/lib/utils";
 import Head from "next/head";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {FiHome,FiPlusSquare, FiVideo} from "react-icons/fi";
 import { Card } from "../components/Card";
 import { NavBar } from "../components/NavBar";
@@ -101,9 +101,11 @@ export default function dashboard(){
     
     </>}
 
-    {!session && <>
-    
-    </>}
+    {!session && 
+    useEffect(()=>{
+        router.replace("/");
+    })
+    }
 
        </>)
 

@@ -22,21 +22,13 @@ export default function dashboard(){
         setminutes(new Date().getMinutes());
     }, 100);
 
-    {!session && 
-        useEffect(()=>{
-            router.replace("/login");
-        })
-    }
+    
 
     if(session){
 
     return (
         
-
-    
-       
-   
-    <Grid
+   <Grid
     height='100vh'
     templateColumns='80px repeat(2,1fr)'
     templateRows='80px 1fr'
@@ -107,6 +99,15 @@ export default function dashboard(){
 
     </Grid>
     )
+
+    }else{
+      
+    useEffect(()=>{
+        router.replace("/login");
+    })   
+     
+    return <div></div> 
+      
     }
 
     

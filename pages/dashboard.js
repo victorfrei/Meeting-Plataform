@@ -1,7 +1,6 @@
 
 import { Avatar } from "@chakra-ui/avatar";
 import { Box, Flex, Grid, GridItem, Heading, Text } from "@chakra-ui/layout";
-import { useSession } from "next-auth/client";
 import { formatWithValidation } from "next/dist/next-server/lib/utils";
 import Head from "next/head";
 import { useEffect, useState } from "react";
@@ -9,14 +8,16 @@ import {FiHome,FiPlusSquare, FiVideo} from "react-icons/fi";
 import { Card } from "../components/Card";
 import { NavBar } from "../components/NavBar";
 import {useRouter} from 'next/router';
+import { useSession } from "next-auth/client";
 
-export default function dashboard(){
 
-    const [session,loading] = useSession();
+export default function dashboard({props}){
+
+    const [ session, loading] = useSession();
     const router = useRouter();
     const [hour,sethour] = useState("00");
     const [minutes,setminutes] = useState("00");
-
+    console.log("out"+session);
     setInterval(() => {
         sethour(new Date().getHours());
         setminutes(new Date().getMinutes());
@@ -102,7 +103,7 @@ export default function dashboard(){
 
     }else{
       
-        console.log(session)
+        console.log("in"+session)
     // useEffect(()=>{
     //     router.replace("/login");
     // })   
@@ -112,10 +113,10 @@ export default function dashboard(){
     }
 
     
-
-      
-
-    
+  
       
 }
+
+
+
 

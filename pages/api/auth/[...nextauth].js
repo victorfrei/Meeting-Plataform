@@ -31,9 +31,11 @@ export default NextAuth({
     
   },
  session:{
-   jwt:true
-  },
-
+   jwt:true,
+   },
+jwt:{
+encryption:true,
+},
 debug: true,
   // A database is optional, but required to persist accounts in a database
   database: process.env.DATABASE_URL,

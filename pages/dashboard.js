@@ -22,6 +22,8 @@ export default function dashboard(){
         setminutes(new Date().getMinutes());
     }, 100);
 
+    console.log(session);
+    console.error(session);
 
     {!session && 
         useEffect(()=>{

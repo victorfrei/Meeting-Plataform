@@ -30,7 +30,9 @@ export default NextAuth({
     newUser:'/dashboard',
     
   },
- 
+ session:{
+   jwt:true
+  },
 
 debug: true,
   // A database is optional, but required to persist accounts in a database

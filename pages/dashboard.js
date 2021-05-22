@@ -1,7 +1,6 @@
 
 import { Avatar } from "@chakra-ui/avatar";
 import { Box, Flex, Grid, GridItem, Heading, Link, Text, } from "@chakra-ui/layout";
-import { formatWithValidation } from "next/dist/next-server/lib/utils";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import {FiHome,FiPlusSquare, FiVideo} from "react-icons/fi";
@@ -142,9 +141,7 @@ export default function dashboard(){
     )
 
     }else{
-       useEffect(()=>{
-            router.replace('/');
-       })
+        return <div></div>
     }
    
 

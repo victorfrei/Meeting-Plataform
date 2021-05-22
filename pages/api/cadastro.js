@@ -22,7 +22,7 @@ export default (req,resp)=>{
     if(session){
    mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true , useUnifiedTopology: true });
     
-   const room = new Room({name:'teste',owner:session.user.name});
+   const room = new Room({name:'teste',owner:await session.user.name});
    room.save();
 
     setTimeout(() => {

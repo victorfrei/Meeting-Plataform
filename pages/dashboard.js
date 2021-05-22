@@ -78,7 +78,7 @@ export default function dashboard({props}){
     </GridItem>
 
     <GridItem display='flex' justifyContent='flex-end' alignItems='center' padding='0 30px' colSpan={2} rowSpan={1} rowStart={1} colStart={2}>
-        <Avatar src='/profile.png' bg='transparent' border="2px solid #E69A3E" shadow='base'></Avatar>
+        <Avatar src={session.user.image} name={session.user.name} bg='transparent' border="2px solid #E69A3E" shadow='base'></Avatar>
     </GridItem>
 
     <GridItem display='flex' flexDir='column' gridGap={5} alignItems='center' colStart={3} padding='20px 40px' colSpan={1} rowStart={2} rowSpan={2}>

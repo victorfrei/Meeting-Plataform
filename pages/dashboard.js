@@ -22,6 +22,7 @@ import {
     MenuDivider,
     Switch,
     useColorMode,
+    Spinner,
   } from "@chakra-ui/react"
 
 export default function dashboard(){
@@ -140,13 +141,15 @@ export default function dashboard(){
     </Grid>
     )
 
-    }else{
-        return <div></div>
+    }
+
+    if(!session){
+        return <Flex justifyContent='center' alignItems='center'>Acesso Negado</Flex>
     }
    
 
     if(loading){
-        return <div>Loading...</div>
+        return <Spinner size='lg'></Spinner>
     }
       
 }

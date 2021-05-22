@@ -141,8 +141,10 @@ export default function dashboard({props}){
     </Grid>
     )
 
-    }else{
-     
+    }
+
+    if(!session){
+    console.log(session); 
     return <div></div> 
       
     }

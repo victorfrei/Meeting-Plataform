@@ -143,11 +143,10 @@ export default function dashboard({props}){
 
     }
 
-    if(session && !loading){
-        console.log(session)
-        // useEffect(()=>{
-        //     router.replace('/');
-        // })
+    if(!session && !loading){
+        useEffect(()=>{
+            router.replace('/');
+        })
    
       return <div></div>
     }

@@ -2,8 +2,8 @@ import { getSession } from "next-auth/client";
 
 
 
-export default (req,res)=>{
-    const session = getSession({req});
+export default async(req,res)=>{
+    const session = await getSession({req});
     res.send(session);
 
 }

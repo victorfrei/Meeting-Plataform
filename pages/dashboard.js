@@ -38,7 +38,7 @@ export default function dashboard({props}){
     }, 100);
 
 
-    if(session && !loading){ //change true to session
+    if(session){ //change true to session
 
     return (
         
@@ -143,16 +143,18 @@ export default function dashboard({props}){
 
     }
 
-    if(!session && !loading){
+    if(!session){
         useEffect(()=>{
             router.replace('/');
         })
    
       return <div></div>
     }
-
     
-  
+
+    if(loading){
+        return <div></div>
+    }
       
 }
 

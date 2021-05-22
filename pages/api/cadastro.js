@@ -16,12 +16,12 @@ const Room = mongoose.model('Room',
 
 
 
-export default (req,resp)=>{
+export default async(req,resp)=>{
     const session = getSession({req});
 
     if(session){
    mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true , useUnifiedTopology: true });
-    
+
    const room = new Room({name:'teste',owner:await session.user.name});
    room.save();
 

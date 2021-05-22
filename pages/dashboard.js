@@ -25,7 +25,7 @@ import {
     useColorMode,
   } from "@chakra-ui/react"
 
-export default function dashboard({props}){
+export default function dashboard(){
 
     const { colorMode, toggleColorMode } = useColorMode()
     const [ session, loading] = useSession();
@@ -38,7 +38,7 @@ export default function dashboard({props}){
     }, 100);
 
 
-    if(session){ //change true to session
+    if(session && !loading){ //change true to session
 
     return (
         
@@ -141,19 +141,15 @@ export default function dashboard({props}){
     </Grid>
     )
 
-    }
-
-    if(!session){
-        useEffect(()=>{
+    }else{
+       useEffect(()=>{
             router.replace('/');
-        })
-   
-      return <div></div>
+       })
     }
-    
+   
 
     if(loading){
-        return <div></div>
+        return <div>Loading...</div>
     }
       
 }

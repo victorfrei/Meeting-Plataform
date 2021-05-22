@@ -93,8 +93,9 @@ export default function dashboard(){
 
     <GridItem display='flex' justifyContent='flex-end' alignItems='center' padding='0 30px' colSpan={2} rowSpan={1} rowStart={1} colStart={2}>
     <Menu isLazy>
-  <MenuButton>{/* <Avatar src={session.user.image} name={session.user.name} bg='transparent' border="2px solid #E69A3E" shadow='base'></Avatar> */}
-        <Avatar name="victor freire" bg='transparent' border="2px solid #E69A3E" shadow='base'></Avatar></MenuButton>
+  <MenuButton>
+      <Avatar src={session.user.image} name={session.user.name} bg='transparent' border="2px solid #E69A3E" shadow='base'></Avatar>
+  </MenuButton>
   <MenuList >
     {/* MenuItems are not rendered unless Menu is open */}
     <Flex flexDir='column' justifyContent='center' alignItems='center'>

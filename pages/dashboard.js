@@ -1,6 +1,6 @@
 
 import { Avatar } from "@chakra-ui/avatar";
-import { Box, Flex, Grid, GridItem, Heading, Text } from "@chakra-ui/layout";
+import { Box, Flex, Grid, GridItem, Heading, Link, Text, } from "@chakra-ui/layout";
 import { formatWithValidation } from "next/dist/next-server/lib/utils";
 import Head from "next/head";
 import { useEffect, useState } from "react";
@@ -9,10 +9,25 @@ import { Card } from "../components/Card";
 import { NavBar } from "../components/NavBar";
 import {useRouter} from 'next/router';
 import { useSession } from "next-auth/client";
-
+import { Alert, AlertIcon } from "@chakra-ui/alert";
+import {
+    Menu,
+    MenuButton,
+    MenuList,
+    MenuItem,
+    MenuItemOption,
+    MenuGroup,
+    MenuOptionGroup,
+    MenuIcon,
+    MenuCommand,
+    MenuDivider,
+    Switch,
+    useColorMode,
+  } from "@chakra-ui/react"
 
 export default function dashboard({props}){
 
+    const { colorMode, toggleColorMode } = useColorMode()
     const [ session, loading] = useSession();
     const router = useRouter();
     const [hour,sethour] = useState("00");
@@ -22,9 +37,8 @@ export default function dashboard({props}){
         setminutes(new Date().getMinutes());
     }, 100);
 
-    
 
-    if(session){
+    if(session){ //change true to session
 
     return (
         
@@ -78,7 +92,29 @@ export default function dashboard({props}){
     </GridItem>
 
     <GridItem display='flex' justifyContent='flex-end' alignItems='center' padding='0 30px' colSpan={2} rowSpan={1} rowStart={1} colStart={2}>
-        <Avatar src={session.user.image} name={session.user.name} bg='transparent' border="2px solid #E69A3E" shadow='base'></Avatar>
+    <Menu isLazy>
+  <MenuButton>{/* <Avatar src={session.user.image} name={session.user.name} bg='transparent' border="2px solid #E69A3E" shadow='base'></Avatar> */}
+        <Avatar name="victor freire" bg='transparent' border="2px solid #E69A3E" shadow='base'></Avatar></MenuButton>
+  <MenuList >
+    {/* MenuItems are not rendered unless Menu is open */}
+    <Flex flexDir='column' justifyContent='center' alignItems='center'>
+    <Avatar src={session.user.image} name={session.user.name} bg='transparent' border="2px solid #E69A3E" shadow='base'></Avatar>
+    <Text>{session.user.name}</Text>
+    </Flex>
+    <MenuDivider/>
+    <MenuItem>Conta</MenuItem>
+    <MenuItem>Configurações</MenuItem>
+    <Link href="/logout" textDecor='none'><MenuItem>Sair</MenuItem></Link>
+    <MenuDivider/>
+    <Flex justifyContent='flex-start'  alignItems='center'>
+    <Switch padding='0 10px'
+    onChange={(e)=>{if(e.target.ischecked){toggleColorMode()}else{toggleColorMode()}}} 
+    >{colorMode =="light"?"Light Mode":"Dark Mode"}</Switch>
+    </Flex>
+  </MenuList>
+
+</Menu>
+        
     </GridItem>
 
     <GridItem display='flex' flexDir='column' gridGap={5} alignItems='center' colStart={3} padding='20px 40px' colSpan={1} rowStart={2} rowSpan={2}>
@@ -91,8 +127,13 @@ export default function dashboard({props}){
         <Text color="rgba(255,255,255,0.7)" fontSize="14px">{new Date().toLocaleDateString('pt-BR',{weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'})}</Text>
         </Card>
 
-        <Card minWidth='100%' textAlign='center' width="100%" height='80px' bg="#29292F" border="1px solid rgba(255,255,255,0.3)"  borderRadius="15px">
-        <Text color="rgba(255,255,255,0.7)" fontSize="14px">Não há salas criadas.</Text>
+        <Alert status="info" borderRadius='15px'>
+    <AlertIcon />
+    Não há salas criadas.
+  </Alert>
+
+        <Card hidden minWidth='100%' textAlign='center' width="100%" height='80px' bg="#29292F" border="1px solid rgba(255,255,255,0.3)"  borderRadius="15px">
+        <Text color="rgba(255,255,255,0.7)" fontSize="14px"></Text>
         </Card>
 
     </GridItem>

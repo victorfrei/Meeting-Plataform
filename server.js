@@ -47,7 +47,12 @@ io.on('connection', socket => {
     io.sockets.emit("typing",socket.id);
   })
 
-  
+  socket.on("video",(video)=>{
+    console.log(video);
+    console.log("^-------Server------^")
+    io.sockets.emit("video",video);
+  })
+
   
 })
 

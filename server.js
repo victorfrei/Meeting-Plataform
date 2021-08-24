@@ -8,6 +8,7 @@ const port = parseInt(process.env.PORT, 10) || 3000
 const dev = process.env.NODE_ENV !== 'production'
 const nextApp = next({ dev })
 const nextHandler = nextApp.getRequestHandler()
+app.use(express.static(__dirname + "/socket.io/socket.io.js"));
 
 app.use(express.static(__dirname + "/public"));
 

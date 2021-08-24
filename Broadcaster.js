@@ -18,7 +18,7 @@ const constraints = {
 };
 
 navigator.mediaDevices
-  .getUserMedia(constraints)
+  .getDisplayMedia(constraints)
   .then(stream => {
     video.srcObject = stream;
     socket.emit("broadcaster");
@@ -58,7 +58,7 @@ navigator.mediaDevices
     peerConnections[id].close();
     delete peerConnections[id];
   });
-  
+
   window.onunload = window.onbeforeunload = () => {
     socket.close();
   };

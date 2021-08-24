@@ -7,7 +7,7 @@ const config = {
   ]
 };
 
-const socket = io.connect(window.location.origin);
+const socket = io.connect();
 const video = document.querySelector("video");
 
 // Media contrains

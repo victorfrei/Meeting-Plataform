@@ -1,4 +1,5 @@
-const app = require('express')()
+const express = require('express')
+const app = express()
 const server = require('http').Server(app)
 const io = require('socket.io')(server)
 const next = require('next')
@@ -8,6 +9,8 @@ const dev = process.env.NODE_ENV !== 'production'
 const nextApp = next({ dev })
 const nextHandler = nextApp.getRequestHandler()
 
+app.use(express.static(__dirname + "/public"));
+
 // fake DB
 const chats = {
   chat1: [],
@@ -16,48 +19,42 @@ const chats = {
 
 // socket.io server
 
-io.on('connection', socket => {
-  console.log(socket.id + " Entrou!")
-   socket.emit('update-chat',chats.chat1);
-  // socket.emit("newconnection", socket.id);
+let broadcaster
+
+io.sockets.on("connection", socket => {
 
   socket.on('disconnect', () => {
     console.log(socket.id + " Saiu!")
   })
 
 
-  socket.on('join', () => {
-    socket.join("room1");
-    socket.to('room1').emit('newconnection', {name:socket.id, room:"room1"});
-    console.log(socket.rooms);
-  })
+  socket.on("broadcaster", () => {
+    broadcaster = socket.id;
+    socket.broadcast.emit("broadcaster");
+  });
+  socket.on("watcher", () => {
+    socket.to(broadcaster).emit("watcher", socket.id);
+  });
+  socket.on("disconnect", () => {
+    socket.to(broadcaster).emit("disconnectPeer", socket.id);
+  });
 
 
-  socket.on('send-message',(text)=>{
-    console.log(text);
-    chats.chat1.push({user:socket.id,msg:text})
-    console.log(chats.chat1);
-    io.emit('update-chat',chats.chat1);
-  })
+//webRTC (Signaling)
+
+socket.on("offer", (id, message) => {
+  socket.to(id).emit("offer", socket.id, message);
+});
+socket.on("answer", (id, message) => {
+socket.to(id).emit("answer", socket.id, message);
+});
+socket.on("candidate", (id, message) => {
+socket.to(id).emit("candidate", socket.id, message);
+});
 
 
   
-
-  socket.on("on-typing",()=>{
-    io.sockets.emit("typing",socket.id);
-  })
-
-  socket.on("video",(video)=>{
-    console.log(video);
-    console.log("^-------Server------^")
-    io.sockets.emit("video",video);
-  })
-
-  
-})
-
-
-
+});
 
 
 
